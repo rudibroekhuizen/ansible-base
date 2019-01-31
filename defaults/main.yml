@@ -1,0 +1,15 @@
+---
+# defaults file for ansible-base
+
+base_debian_packages:
+  - 'wget'
+  - 'git'
+  - 'git-core'
+  - 'vim'
+  - 'curl'
+
+# apt-get upgrade
+base_debian_upgrade: false
+
+# apt-get dist-upgrade
+base_debian_dist_upgrade: false
