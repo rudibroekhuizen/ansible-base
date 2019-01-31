@@ -1,6 +1,11 @@
 ---
 # defaults file for ansible-base
 
+base_arch_packages:
+  - 'curl'
+  - 'git'
+  - 'wget'
+
 base_debian_packages:
   - 'wget'
   - 'git'
