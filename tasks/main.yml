@@ -1,9 +1,16 @@
 ---
+- name: Create admin users
+  user:
+    name: "{{ item.username }}"
+    group: adm
+    shell: /bin/zsh
+  with_items: "{{ admin_users }}"
+
 - name: Set ssh keys for admin users from files
   authorized_key:
     user: "{{ item.username }}"
     key: "{{ lookup('file', item.ssh_key) }}"
     exclusive: yes
-  with_items: "{{ users }}"
+  with_items: "{{ admin_users }}"
   when: "item.ssh_key is defined"
 ...  
