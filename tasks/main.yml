@@ -1,7 +1,7 @@
 ---
 - name: Set ssh keys for admin users from files
   authorized_key:
-    user: "{{ item.name }}"
+    user: "{{ item.username }}"
     key: "{{ lookup('file', item.ssh_key) }}"
     exclusive: yes
   with_items: "{{ users }}"
