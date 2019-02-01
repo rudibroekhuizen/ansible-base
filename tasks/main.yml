@@ -5,5 +5,5 @@
     key: "{{ lookup('file', item.ssh_key) }}"
     exclusive: yes
   with_items: "{{ users }}"
-  when: "item.ssh_key is defined and item.name in admin_users"
+  when: "item.ssh_key is defined"
 ...  
